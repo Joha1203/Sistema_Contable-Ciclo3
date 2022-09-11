@@ -59,5 +59,6 @@ package com.example.demo.modelos;
                     ", rolEmpleado='" + rolEmpleado + '\'' +
                     '}';
         }
+
     }
 

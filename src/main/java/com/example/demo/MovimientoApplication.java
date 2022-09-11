@@ -4,11 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EmpresaApplication {
+public class MovimientoApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(EmpresaApplication.class, args);
-    }
+	public static void main(String[] args) {
 
+		SpringApplication.run(MovimientoApplication.class, args);
+	}
 
 }

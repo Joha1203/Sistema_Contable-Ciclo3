@@ -24,4 +24,5 @@ public class ColumnEntityEmpresa {
     private String direccion;
 
 
+
 }

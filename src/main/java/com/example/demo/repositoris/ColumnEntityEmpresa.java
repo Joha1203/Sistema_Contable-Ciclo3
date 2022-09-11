@@ -23,4 +23,5 @@ public class ColumnEntityEmpresa {
     @Column(name = "direccion")
     private String direccion;
 
+
 }

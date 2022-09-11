@@ -43,5 +43,6 @@ public class ControllerEmpresa {
     public ResponseEntity<Object> deleteEmpresa(@PathVariable("id") int id){
         return new ResponseEntity<Object>(this.serviceEmpresa.delete(id),HttpStatus.OK);
     }
+
 }
 

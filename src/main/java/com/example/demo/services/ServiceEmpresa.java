@@ -1,46 +1,70 @@
 package com.example.demo.services;
 
 import com.example.demo.repositoris.EntityEmpresa;
-import com.example.demo.repositoris.EmpresaRepositorio;
+import com.example.demo.repositoris.ColumnEntityEmpresa;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class ServiceEmpresa {
 
     @Autowired
     EntityEmpresa entityEmpresa;
 
-    public List<EmpresaRepositorio> get(){
+    public List<ColumnEntityEmpresa> get() {
         var ingreso = entityEmpresa.findAll();
+        log.debug("Servicio: get", ingreso);
         return ingreso;
     }
 
-    public EmpresaRepositorio post(EmpresaRepositorio prueba){
+    public ColumnEntityEmpresa post(ColumnEntityEmpresa prueba) {
         var ingreso = entityEmpresa.save(prueba);
+        log.debug("Servicio: Post", ingreso);
         return ingreso;
     }
 
-    public EmpresaRepositorio path(int id, EmpresaRepositorio repositorio){
-        EmpresaRepositorio valor = entityEmpresa.findById(id).orElse(null);
-
-        if (repositorio.getNombre() != null){
-            valor.setId(repositorio.getId());
-            valor.setNombre(repositorio.getNombre());
-            valor.setNit(repositorio.getNit());
-            valor.setTelefono(repositorio.getTelefono());
-            valor.setDireccion(repositorio.getDireccion());
-        }
-
-        return entityEmpresa.save(valor);
+    public Optional<ColumnEntityEmpresa> getEmpresa(int id) {
+        var ingreso = entityEmpresa.findById(id);
+        log.debug("Servicio: getEmpresa", ingreso);
+        return ingreso;
     }
 
-    public Optional<EmpresaRepositorio> delete(int id){
-        var empresa = entityEmpresa.findById(id);
+    public ColumnEntityEmpresa path(int id, ColumnEntityEmpresa repositorio) {
+        ColumnEntityEmpresa valor = entityEmpresa.findById(id).orElse(null);
+        log.debug("Servicio: path: Empresa encontrada ", valor);
+
+        if (Objects.nonNull(valor)) {
+            if (Objects.nonNull(repositorio.getId())) {
+                valor.setId(repositorio.getId());
+            }
+            if (Objects.nonNull(repositorio.getNombre())) {
+                valor.setNombre(repositorio.getNombre());
+            }
+            if (Objects.nonNull(repositorio.getNit())) {
+                valor.setNit(repositorio.getNit());
+            }
+            if (Objects.nonNull(repositorio.getTelefono())) {
+                valor.setTelefono(repositorio.getTelefono());
+            }
+            if (Objects.nonNull(repositorio.getDireccion())) {
+                valor.setDireccion(repositorio.getDireccion());
+            }
+            log.debug("Servicio: path: Datos guardados", valor);
+            return entityEmpresa.save(valor);
+        }
+        return repositorio;
+    }
+
+    public Optional<ColumnEntityEmpresa> delete(int id) {
+        var Empresa = entityEmpresa.findById(id);
         entityEmpresa.deleteById(id);
-        return empresa;
+        log.debug("Servicio: delete", Empresa);
+        return Empresa;
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping(value = "/categories")
+@RequestMapping(value = "/enterprices")
 
 public class ControllerEmpresa {
 

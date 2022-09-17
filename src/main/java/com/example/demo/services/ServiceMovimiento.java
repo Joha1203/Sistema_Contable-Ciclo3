@@ -12,7 +12,6 @@ import java.util.Optional;
 @Slf4j
 @Service
 public class ServiceMovimiento {
-
     @Autowired
     EntityMovimiento entityMovimiento;
 

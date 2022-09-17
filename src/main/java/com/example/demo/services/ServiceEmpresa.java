@@ -13,7 +13,6 @@ import java.util.Optional;
 @Slf4j
 @Service
 public class ServiceEmpresa {
-
     @Autowired
     EntityEmpresa entityEmpresa;
 
@@ -67,6 +66,4 @@ public class ServiceEmpresa {
         log.debug("Servicio: delete", Empresa);
         return Empresa;
     }
-
-
 }

@@ -4,6 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EntityMovimiento extends JpaRepository<ColumnEntityMovimiento,Integer> {
-
+public interface RepositoryEmployee extends JpaRepository<EntityEmployee,Long> {
 }

@@ -81,5 +81,4 @@ public class EntityEnterprise {
     public EntityEnterprise(String name) {
         this.name = name;
     }
-
 }

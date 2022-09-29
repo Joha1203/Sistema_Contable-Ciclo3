@@ -28,6 +28,7 @@ public class ServiceEnterprise {
         return ingreso;
     }
 
+
     public EntityEnterprise post(EntityEnterprise Enterprise) {
         Date fecha = new DateActual().local();
         Enterprise.setCreateAt(fecha);

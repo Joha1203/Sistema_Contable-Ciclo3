@@ -93,6 +93,5 @@ public class ControllerEnterprise {
         String url = "/enterprises/%s/get".formatted(ruta);
         return new RedirectView(url);
     }
-
 }
 

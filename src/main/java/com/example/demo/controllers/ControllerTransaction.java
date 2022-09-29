@@ -32,7 +32,6 @@ public class ControllerTransaction {
         return "movimientoEmpresa";
     }
 
-
     //obtener plantilla y crear movimiento: funciona
     @GetMapping(path = "/{id}/movements/crear")
     public String postMovimiento(Model modelo,@PathVariable("id") Long ruta){

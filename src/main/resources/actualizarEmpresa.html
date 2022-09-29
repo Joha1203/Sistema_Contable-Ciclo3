@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desoft team</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/estilos.css" th:href="@{/estilos.css}">
+    <link rel="icon" th:href="@{/img/menu.svg}" type="image/x-icon">
+</head>
+
+<body >
+
+
+<nav class="nav">
+    <div class="nav__container">
+        <label for="check" class="nav__icon">
+            <img th:src="@{/img/menu.svg}" class="nav__img">
+            <span id="titulo">Desoft Team</span>
+        </label>
+        <span style="color: white;font-size: 20px;font-weight: bolder;">Actualizar Empresa</span>
+        <input type="checkbox" id="check" class="nav__checkbox">
+        <div class="nav__items">
+            <a class="nav__link">info 1</a>
+            <a class="nav__link">info 2</a>
+        </div>
+    </div>
+</nav>
+
+
+<div style="width: 100%; display: flex; flex-direction: row; justify-content: center; margin-top: 50px;">
+    <div class="card" style="width: 400px;">
+        <div class="card-header" style="text-align: center;">
+            <h4>Datos a actualizar</h4>
+        </div>
+        <div class="card-body">
+            <form style="gap: 30px;" class="d-flex flex-column align-items-center" th:action="@{/enterprises/{idRuta}/patch(idRuta=${ruta})}" th:method="put" th:object="${Epersona}">
+                <input required th:field="*{name}" class="form-control" type="text" placeholder="nombre"/>
+                <input required th:field="*{document}" class="form-control" type="text" placeholder="documento"/>
+                <input required th:field="*{phone}" class="form-control" type="text" placeholder="telefono"/>
+                <input required th:field="*{address}" class="form-control" type="text" placeholder="direccion"/>
+                <button class="btn btn-primary" type="submit"> Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
+
+
+

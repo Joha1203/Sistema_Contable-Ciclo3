@@ -6,4 +6,3 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RepositoryEnterprise extends JpaRepository<EntityEnterprise,Long> {
 }
-

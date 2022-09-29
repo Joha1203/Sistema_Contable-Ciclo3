@@ -30,7 +30,6 @@ public class ControllerTransaction {
         model.addAttribute("ruta",id);
         model.addAttribute("cantidad",total);
         return "movimientoEmpresa";
-
     }
 
 

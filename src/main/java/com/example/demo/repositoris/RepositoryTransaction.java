@@ -6,4 +6,3 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RepositoryTransaction extends JpaRepository<EntityTransaction,Long> {
 }
-
